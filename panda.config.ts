@@ -14,13 +14,6 @@ export default defineConfig({
   theme: {
     extend: {},
   },
-  // Conditions here
-  conditions: {
-    extend: {
-      icon: '& > svg',
-    },
-  },
-
   // The output directory for your css system
   outdir: 'styled-system',
   jsxFramework: 'react',

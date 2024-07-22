@@ -1,5 +1,4 @@
 import { css } from '../styled-system/css';
-import { vstack, hstack, circle } from '../styled-system/patterns';
 
 function App() {
   return (
@@ -12,14 +11,8 @@ function App() {
         color: '#FFF',
       })}
     >
-      <div
-        className={vstack({
-          maxW: '640px',
-          mx: 'auto',
-          gap: '56px',
-        })}
-      >
-        <div className={vstack({ gap: '24px' })}>
+      <div>
+        <div>
           <h1
             className={css({
               fontSize: '60px',
@@ -47,14 +40,8 @@ function App() {
             </p>
           </div>
         </div>
-        <div className={vstack({ gap: '32px' })}>
-          <div
-            className={hstack({
-              gap: '24px',
-              fontSize: '18px',
-              fontWeight: '500',
-            })}
-          >
+        <div>
+          <div>
             <a
               href='#'
               className={css({
@@ -80,8 +67,8 @@ function App() {
               View a demo
             </a>
           </div>
-          <div className={hstack({ gap: '12px' })}>
-            <div className={circle({ size: '12px', bg: '#19BF57' })} />
+          <div>
+            <div />
             <span className={css({ color: '#FFF' })}>
               1000+{' '}
               <span className={css({ color: '#A0AEC0' })}>
