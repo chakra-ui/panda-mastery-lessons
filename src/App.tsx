@@ -1,5 +1,5 @@
-import { css } from '../styled-system/css';
-import { grid, gridItem, stack } from '../styled-system/patterns';
+import { css, cx } from '../styled-system/css';
+import { cq, grid, gridItem, stack } from '../styled-system/patterns';
 
 interface FeatureProps {
   title: string;
@@ -9,7 +9,12 @@ interface FeatureProps {
 
 function Feature({ title, description, icon }: FeatureProps) {
   return (
-    <div className={stack({ gap: '24px' })}>
+    <div
+      className={stack({
+        gap: '24px',
+        direction: { base: 'row', '@/md': 'column' },
+      })}
+    >
       {icon}
       <div className={stack()}>
         <div
@@ -35,16 +40,17 @@ function App() {
         minH: '100dvh',
         bg: '#F8FAFC',
         pt: '96px',
+        px: '24px',
       })}
     >
       <div
         className={grid({
           maxW: '1167px',
           mx: 'auto',
-          columns: 8,
+          columns: { sm: 8 },
         })}
       >
-        <div className={gridItem({ colSpan: 4 })}>
+        <div className={cx(gridItem({ colSpan: 4 }), cq())}>
           <div className={stack({ gap: '72px', maxW: '484px' })}>
             <div className={stack({ gap: '24px' })}>
               <h1
@@ -64,7 +70,7 @@ function App() {
             </div>
             <div
               className={grid({
-                columns: 2,
+                columns: { base: 1, '@/md': 2 },
                 columnGap: '72px',
                 rowGap: '56px',
               })}
@@ -167,6 +173,7 @@ function App() {
         <div
           className={gridItem({
             colSpan: 4,
+            hideBelow: 'sm',
           })}
         >
           <img
