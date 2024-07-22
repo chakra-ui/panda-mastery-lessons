@@ -10,6 +10,14 @@ export default defineConfig({
   // Files to exclude
   exclude: [],
 
+  // Global CSS here
+  globalCss: {
+    body: {
+      bg: { base: '#F8FAFC', _dark: 'black' },
+      color: { base: 'black', _dark: 'white' },
+    },
+  },
+
   // Useful for theme customization
   theme: {
     extend: {},
