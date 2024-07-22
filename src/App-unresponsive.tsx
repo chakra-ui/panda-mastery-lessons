@@ -31,25 +31,20 @@ function App() {
         <div
           className={css({
             display: 'flex',
-            flexDirection: { base: 'column', lg: 'row' },
-            alignItems: { lg: 'flex-start' },
             justifyContent: 'space-between',
-            mt: { base: '56px', lg: '96px' },
-            gap: { base: '40px', md: '48px', lg: '96px' },
-            maxW: { base: '420px', lg: 'unset' },
-            mx: { base: 'auto', lg: 'unset' },
+            alignItems: 'flex-start',
+            mt: '96px',
+            gap: '96px',
           })}
         >
           <div
             className={css({
-              maxWidth: { lg: '320px' },
-              textAlign: { base: 'center', lg: 'start' },
-              marginInline: 'auto',
+              maxWidth: '320px',
             })}
           >
             <h1
               className={css({
-                fontSize: { base: '32px', md: '36px' },
+                fontSize: '36px',
                 fontWeight: '600',
                 marginBottom: '12px',
               })}
@@ -76,13 +71,13 @@ function App() {
             className={css({
               display: 'flex',
               flexDirection: 'column',
-              flex: { lg: '1' },
+              flex: '1',
               gap: '24px',
-              backgroundColor: { md: 'white' },
-              borderWidth: { md: '1px' },
+              backgroundColor: 'white',
+              borderWidth: '1px',
               borderColor: '#EFEFEF',
               borderRadius: '8px',
-              padding: { md: '32px' },
+              padding: '32px',
             })}
           >
             <div
