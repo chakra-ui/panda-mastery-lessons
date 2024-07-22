@@ -14,6 +14,21 @@ export default defineConfig({
   theme: {
     extend: {},
   },
+  // Patterns here
+  patterns: {
+    extend: {
+      autoflex: {
+        transform() {
+          return {
+            display: 'flex',
+            flexDirection: { base: 'column', lg: 'row' },
+            alignItems: 'center',
+            gap: '48px',
+          };
+        },
+      },
+    },
+  },
   // The output directory for your css system
   outdir: 'styled-system',
   jsxFramework: 'react',
