@@ -27,7 +27,7 @@ Each module will include a series of lessons, with a video lecture and a code ex
 
 ## Branching Out
 
-To access the code for each lesson, branch out from the main branch to a new branch for the lesson. For example, to access the code for lesson 2, switch to it using `git checkout module-2`.
+To access the code for each lesson, branch out from the main branch to a new branch for the lesson. For example, to access the code for module 2 lesson 2, switch to it using `git checkout 02-lesson2`.
 
 ## Completing the Course
 
