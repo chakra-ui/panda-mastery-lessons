@@ -6,7 +6,7 @@ import { ThemeProvider } from 'next-themes';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ThemeProvider attribute='class' disableTransitionOnChange>
+    <ThemeProvider attribute='class' disableTransitionOnChange enableSystem>
       <App />
     </ThemeProvider>
   </React.StrictMode>

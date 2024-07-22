@@ -44,7 +44,6 @@ function App() {
     <div
       className={css({
         minH: '100dvh',
-        // bg: '#F8FAFC',
         pt: '96px',
         px: '24px',
       })}
@@ -97,7 +96,7 @@ function App() {
             >
               <Feature
                 title='Orders and fulfilment'
-                description='Fufill orders quickly and accurately'
+                description='Fulfill orders quickly and accurately'
                 icon={
                   <svg
                     width='32'
