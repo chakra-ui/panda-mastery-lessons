@@ -1,5 +1,13 @@
 import { css } from '../styled-system/css';
-import { stack, autoflex } from '../styled-system/patterns';
+import { scrollable } from '../styled-system/patterns';
+
+const itemClassName = css({
+  bg: 'white',
+  borderWidth: '1px',
+  borderColor: 'lightgray',
+  padding: '48px',
+  borderRadius: '10px',
+});
 
 function App() {
   return (
@@ -8,41 +16,24 @@ function App() {
         minH: '100dvh',
         bg: '#F8FAFC',
         pt: '96px',
-        px: { base: '24px', lg: '48px' },
       })}
     >
-      <div className={autoflex()}>
-        <div className={stack({ maxW: { lg: '600px' }, mx: 'auto' })}>
-          <h1
-            className={css({
-              fontSize: '36px',
-              fontWeight: '800',
-            })}
-          >
-            Simplified Payments and Invoice Tracking Management
-          </h1>
-          <p
-            className={css({
-              fontSize: '21px',
-            })}
-          >
-            Centralize bill payments and invoice management to help you gain
-            better control over your finances, ensure payments are made on time,
-            and have a clear overview of your financial obligations.
-          </p>
-        </div>
-        <div>
-          <img
-            src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D'
-            alt='simplified payments and invoices'
-            className={css({
-              width: 'full',
-              height: 'full',
-              borderRadius: '12px',
-              objectFit: 'cover',
-            })}
-          />
-        </div>
+      <div
+        className={scrollable({
+          display: 'flex',
+          flexDir: 'column',
+          gap: '24px',
+          maxH: '240px',
+          px: '12px',
+          size: '8',
+          thumbColor: 'green.500',
+          trackColor: 'pink.700',
+        })}
+      >
+        <div className={itemClassName}>Box 1</div>
+        <div className={itemClassName}>Box 2</div>
+        <div className={itemClassName}>Box 3</div>
+        <div className={itemClassName}>Box 4</div>
       </div>
     </div>
   );

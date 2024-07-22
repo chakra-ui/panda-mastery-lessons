@@ -17,13 +17,31 @@ export default defineConfig({
   // Patterns here
   patterns: {
     extend: {
-      autoflex: {
-        transform() {
+      scrollable: {
+        properties: {
+          size: { type: 'token', value: 'sizes' },
+          thumbColor: { type: 'token', value: 'colors' },
+          trackColor: { type: 'token', value: 'colors' },
+        },
+        transform(properties) {
+          const { size, thumbColor, trackColor, ...rest } = properties;
+
           return {
-            display: 'flex',
-            flexDirection: { base: 'column', lg: 'row' },
-            alignItems: 'center',
-            gap: '48px',
+            overflow: 'auto',
+            '&::-webkit-scrollbar': {
+              width: size,
+              height: size,
+            },
+            '&::-webkit-scrollbar:window-inactive': {
+              opacity: '0',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              background: thumbColor,
+            },
+            '&::-webkit-scrollbar-track': {
+              background: trackColor,
+            },
+            ...rest,
           };
         },
       },
