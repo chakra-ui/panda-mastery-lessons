@@ -1,4 +1,5 @@
 import { definePreset } from '@pandacss/dev';
+import { alertRecipe } from './alert';
 
 const preset = definePreset({
   theme: {
@@ -24,6 +25,9 @@ const preset = definePreset({
           },
         },
       },
+      slotRecipes: {
+        alert: alertRecipe
+      }
     },
   },
 });

@@ -1,5 +1,5 @@
 import { css } from '@mono/styled-system/css'
-import './App.css'
+import { Alert, Badge } from '@mono/ui'
 
 function App() {
 
@@ -7,7 +7,15 @@ function App() {
    <div className={css({
     padding: '24',
     fontSize: '3xl',
-   })}>Helloo from App</div>
+   })}>
+    <Badge status='info'>Badge</Badge>
+    <Alert
+        status='info'
+        kind='subtle'
+        title='Alert'
+        description='This is an alert'
+      />
+   </div>
   )
 }
 

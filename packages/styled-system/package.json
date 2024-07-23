@@ -37,7 +37,12 @@
       "require": "./dist/jsx/index.mjs",
       "import": "./dist/jsx/index.mjs"
     },
-    "./styles.css": "./dist/styles.css"
+    "./styles.css": "./dist/styles.css",
+    "./recipes": {
+      "types": "./dist/recipes/index.d.ts",
+      "require": "./dist/recipes/index.mjs",
+      "import": "./dist/recipes/index.mjs"
+    }
   },
   "dependencies": {
     "@mono/preset": "workspace:*"
