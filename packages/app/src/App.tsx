@@ -1,5 +1,4 @@
 import { css } from '@mono/styled-system/css'
-import './App.css'
 
 function App() {
 
