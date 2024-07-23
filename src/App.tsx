@@ -1,5 +1,6 @@
 import { css, cva } from '../styled-system/css';
-import { stack } from '../styled-system/patterns';
+import { vstack } from '../styled-system/patterns';
+import { styled } from '../styled-system/jsx';
 
 const inputRecipe = cva({
   base: {
@@ -41,6 +42,8 @@ const inputRecipe = cva({
   compoundVariants: [{ kind: 'flushed', css: { px: '0', borderRadius: '0' } }],
 });
 
+const Input = styled('input', inputRecipe);
+
 function App() {
   return (
     <div
@@ -50,35 +53,11 @@ function App() {
         px: '24px',
       })}
     >
-      <div className={stack({ gap: '32px', maxW: '490px', mx: 'auto' })}>
-        <input
-          className={inputRecipe({ kind: 'outline', size: 'small' })}
-          placeholder='Placeholder'
-        />
-        <input
-          className={inputRecipe({ kind: 'outline', size: 'medium' })}
-          placeholder='Placeholder'
-        />
-        <input
-          className={inputRecipe({ kind: 'outline', size: 'large' })}
-          placeholder='Placeholder'
-        />
-
-        <input
-          className={inputRecipe({ kind: 'flushed', size: 'small' })}
-          placeholder='Placeholder'
-        />
-        <input
-          className={inputRecipe({ kind: 'flushed', size: 'medium' })}
-          placeholder='Placeholder'
-        />
-        <input
-          className={inputRecipe({
-            kind: 'flushed',
-            size: 'large',
-          })}
-          placeholder='Placeholder'
-        />
+      <div className={vstack({ gap: '32px', maxW: '490px', mx: 'auto' })}>
+        <Input kind='flushed' size='small' placeholder='Placeholder' />
+        <Input kind='flushed' size='large' placeholder='Placeholder' />
+        <Input kind='outline' size='small' placeholder='Placeholder' />
+        <Input kind='outline' size='large' placeholder='Placeholder' />
       </div>
     </div>
   );
