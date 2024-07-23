@@ -12,7 +12,18 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      tokens: {
+        spacing: { none: { value: '0px' } },
+        fontSizes: { sm: { value: '12px' } },
+        colors: {
+          accentText: { value: '#6644ff' },
+          mutedText: { value: '#45445f' },
+          accentBg: { value: '#FA44ff' },
+        },
+        radii: { lg: { value: '12px' } },
+      },
+    },
   },
 
   // The output directory for your css system
