@@ -1,26 +1,34 @@
 import { css, cva } from '../styled-system/css';
 import { hstack } from '../styled-system/patterns';
 
-const buttonRecipe = cva({
+const badgeRecipe = cva({
   base: {
     color: 'white',
-    fontSize: '18px',
-    fontWeight: 'semibold',
-    borderRadius: '6px',
-    height: '48px',
-    px: '24px',
+    fontSize: '21px',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    borderRadius: '4px',
+    lineHeight: '1.33',
+    px: '8px',
   },
   variants: {
-    kind: {
-      primary: {
+    status: {
+      neutral: {
+        bg: '#718096',
+      },
+      info: {
         bg: '#3182CE',
       },
-      secondary: {
+      success: {
         bg: '#38A169',
       },
-      neutral: {
-        bg: '#EDF2F7',
-        color: 'black',
+      error: {
+        bg: '#E53E3E',
+      },
+    },
+    kind: {
+      solid: {
+        bg: '#718096',
       },
     },
   },
@@ -35,10 +43,11 @@ function App() {
         px: '24px',
       })}
     >
-      <div className={hstack({ gap: '32px', maxW: '400px', mx: 'auto' })}>
-        <button className={buttonRecipe({ kind: 'primary' })}>Button</button>
-        <button className={buttonRecipe({ kind: 'secondary' })}>Button</button>
-        <button className={buttonRecipe({ kind: 'neutral' })}>Button</button>
+      <div className={hstack({ gap: '32px', maxW: '490px', mx: 'auto' })}>
+        <div className={badgeRecipe({ status: 'neutral' })}>Badge</div>
+        <div className={badgeRecipe({ status: 'info' })}>Badge</div>
+        <div className={badgeRecipe({ status: 'success' })}>Badge</div>
+        <div className={badgeRecipe({ status: 'error' })}>Badge</div>
       </div>
     </div>
   );
