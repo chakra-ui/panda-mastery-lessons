@@ -1,46 +1,44 @@
 import { css, cva } from '../styled-system/css';
-import { hstack } from '../styled-system/patterns';
+import { stack } from '../styled-system/patterns';
 
-const badgeRecipe = cva({
+const inputRecipe = cva({
   base: {
-    color: 'white',
-    fontSize: '21px',
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-    borderRadius: '4px',
-    lineHeight: '1.33',
-    px: '8px',
+    _placeholder: {
+      color: '#8B95A1',
+    },
+    borderColor: '#E2E8F0',
   },
   variants: {
-    status: {
-      neutral: {
-        colorPalette: 'gray',
-      },
-      info: {
-        colorPalette: 'blue',
-      },
-      success: {
-        colorPalette: 'green',
-      },
-      error: {
-        colorPalette: 'red',
-      },
-    },
     kind: {
-      solid: {
-        bg: 'colorPalette.500',
-      },
       outline: {
-        borderWidth: '2px',
-        borderColor: 'colorPalette.400',
-        color: 'colorPalette.500',
+        borderWidth: '1px',
+      },
+      flushed: {
+        borderBottomWidth: '1px',
+      },
+    },
+    size: {
+      small: {
+        borderRadius: '2px',
+        fontSize: '12px',
+        px: '8px',
+        h: '24px',
+      },
+      medium: {
+        borderRadius: '2px',
+        fontSize: '14px',
+        px: '12px',
+        h: '32px',
+      },
+      large: {
+        borderRadius: '4px',
+        fontSize: '16px',
+        px: '16px',
+        h: '40px',
       },
     },
   },
-  defaultVariants: {
-    status: 'info',
-    kind: 'outline',
-  },
+  compoundVariants: [{ kind: 'flushed', css: { px: '0', borderRadius: '0' } }],
 });
 
 function App() {
@@ -52,15 +50,35 @@ function App() {
         px: '24px',
       })}
     >
-      <div className={hstack({ gap: '32px', maxW: '490px', mx: 'auto' })}>
-        <div className={badgeRecipe({ status: 'neutral', kind: 'solid' })}>
-          Badge
-        </div>
-        <div className={badgeRecipe({ status: 'info', kind: 'solid' })}>
-          Badge
-        </div>
-        <div className={badgeRecipe({ status: 'success' })}>Badge</div>
-        <div className={badgeRecipe({ status: 'error' })}>Badge</div>
+      <div className={stack({ gap: '32px', maxW: '490px', mx: 'auto' })}>
+        <input
+          className={inputRecipe({ kind: 'outline', size: 'small' })}
+          placeholder='Placeholder'
+        />
+        <input
+          className={inputRecipe({ kind: 'outline', size: 'medium' })}
+          placeholder='Placeholder'
+        />
+        <input
+          className={inputRecipe({ kind: 'outline', size: 'large' })}
+          placeholder='Placeholder'
+        />
+
+        <input
+          className={inputRecipe({ kind: 'flushed', size: 'small' })}
+          placeholder='Placeholder'
+        />
+        <input
+          className={inputRecipe({ kind: 'flushed', size: 'medium' })}
+          placeholder='Placeholder'
+        />
+        <input
+          className={inputRecipe({
+            kind: 'flushed',
+            size: 'large',
+          })}
+          placeholder='Placeholder'
+        />
       </div>
     </div>
   );
