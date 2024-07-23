@@ -1,19 +1,23 @@
 ```tsx
-import styled, { css } from 'styled-components';
+export const StyledHeaderToolbar = styled.div(({ theme }) => ({
+  position: 'absolute',
+  top: theme.spacing.sm,
+  right: theme.spacing.twoXS,
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  borderColor: theme.colors.borderBold,
+}));
+```
 
-const Button = styled.button<{ $primary?: boolean }>`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid #bf4f74;
-  color: '#BF4F74';
-  margin: 0 1em;
-  padding: 0.25em 1em;
-
-  ${(props) =>
-    props.$primary &&
-    css`
-      background: '#BF4F74';
-      color: white;
-    `};
-`;
+```ts
+const theme = {
+  spacing: {
+    sm: '8px',
+    twoXS: '4px',
+  },
+  colors: {
+    borderBold: 'black',
+  },
+};
 ```
