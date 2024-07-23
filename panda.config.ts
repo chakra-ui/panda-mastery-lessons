@@ -1,5 +1,5 @@
 import { defineConfig } from '@pandacss/dev';
-import { tabsRecipe } from './src/tabs.recipe';
+import { badgeRecipe } from './src/badge.recipe';
 
 export default defineConfig({
   // Whether to use css reset
@@ -15,7 +15,7 @@ export default defineConfig({
   theme: {
     extend: {
       recipes: {
-        tabs: tabsRecipe,
+        badge: badgeRecipe,
       },
     },
   },
