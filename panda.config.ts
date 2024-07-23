@@ -84,6 +84,9 @@ export default defineConfig({
                 _dark: '{colors.cobalt.300}',
               },
             },
+            'faded-accent': {
+              value: '{colors.cobalt.300/16}',
+            },
           },
           text: {
             DEFAULT: {
