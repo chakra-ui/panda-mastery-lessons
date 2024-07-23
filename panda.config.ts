@@ -1,5 +1,5 @@
 import { defineConfig } from '@pandacss/dev';
-import { badgeRecipe } from './src/badge.recipe';
+import { alertRecipe } from './src/alert.recipe';
 
 export default defineConfig({
   // Whether to use css reset
@@ -15,7 +15,7 @@ export default defineConfig({
   theme: {
     extend: {
       recipes: {
-        badge: badgeRecipe,
+        alert: alertRecipe,
       },
     },
   },
