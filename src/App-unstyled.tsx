@@ -25,17 +25,9 @@ function App() {
             gap: '4',
           })}
         >
+          <div className={css({})}>What’s happening</div>
           <div
             className={css({
-              textStyle: 'display.medium',
-              fontWeight: 'semibold',
-            })}
-          >
-            What’s happening
-          </div>
-          <div
-            className={css({
-              textStyle: 'body.large',
               color: 'gray.500',
             })}
           >
@@ -46,23 +38,14 @@ function App() {
           <div
             className={css({
               color: 'gray.500',
-              textStyle: 'body.medium',
             })}
           >
             Open Source - Trending
           </div>
-          <div
-            className={css({
-              textStyle: 'body.large',
-              fontWeight: 'semibold',
-            })}
-          >
-            Park UI has been upgraded
-          </div>
+          <div className={css({})}>Park UI has been upgraded</div>
           <div
             className={css({
               color: 'gray.500',
-              textStyle: 'body.medium',
             })}
           >
             12.3k views
@@ -72,23 +55,14 @@ function App() {
           <div
             className={css({
               color: 'gray.500',
-              textStyle: 'body.medium',
             })}
           >
             Funding - Trending
           </div>
-          <div
-            className={css({
-              textStyle: 'body.large',
-              fontWeight: 'semibold',
-            })}
-          >
-            Chakra just raised 1.3M
-          </div>
+          <div className={css({})}>Chakra just raised 1.3M</div>
           <div
             className={css({
               color: 'gray.500',
-              textStyle: 'body.medium',
             })}
           >
             452.3k views
@@ -98,7 +72,6 @@ function App() {
           href='#'
           className={css({
             color: 'blue.500',
-            textStyle: 'body.medium',
           })}
         >
           Show more
