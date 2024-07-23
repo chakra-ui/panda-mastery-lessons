@@ -1,5 +1,4 @@
 import { defineConfig } from '@pandacss/dev';
-import { pandaPreset } from './panda-preset';
 
 export default defineConfig({
   // Whether to use css reset
@@ -10,50 +9,10 @@ export default defineConfig({
 
   // Files to exclude
   exclude: [],
-  presets: ['@pandacss/preset-panda', pandaPreset],
 
   // Useful for theme customization
   theme: {
-    extend: {
-      semanticTokens: {
-        fonts: {
-          cardTitle: { value: 'Inter' },
-        },
-        colors: {
-          cardBg: { value: 'white' },
-          cardAccent: { value: 'black' },
-        },
-      },
-    },
-  },
-
-  themes: {
-    kent: {
-      semanticTokens: {
-        fonts: {
-          cardTitle: { value: 'Domine' },
-        },
-        colors: {
-          cardBgr: { value: 'white' },
-          cardAccent: { value: '{colors.red.500}' },
-        },
-      },
-    },
-    oxford: {
-      semanticTokens: {
-        fonts: {
-          cardTitle: { value: 'Paytone One' },
-        },
-        colors: {
-          cardBg: { value: '{colors.green.50}' },
-          cardAccent: { value: '{colors.green.600}' },
-        },
-      },
-    },
-  },
-
-  staticCss: {
-    themes: ['*'],
+    extend: {},
   },
 
   // The output directory for your css system
