@@ -14,32 +14,28 @@ const badgeRecipe = cva({
   variants: {
     status: {
       neutral: {
-        colorPalette: 'gray',
+        '--color': '#718096',
       },
       info: {
-        colorPalette: 'blue',
+        '--color': '#3182CE',
       },
       success: {
-        colorPalette: 'green',
+        '--color': '#38A169',
       },
       error: {
-        colorPalette: 'red',
+        '--color': '#E53E3E',
       },
     },
     kind: {
       solid: {
-        bg: 'colorPalette.500',
+        bg: 'var(--color)',
       },
       outline: {
-        borderWidth: '2px',
-        borderColor: 'colorPalette.400',
-        color: 'colorPalette.500',
+        borderWidth: '1px',
+        borderColor: 'var(--color)',
+        color: 'var(--color)',
       },
     },
-  },
-  defaultVariants: {
-    status: 'info',
-    kind: 'outline',
   },
 });
 
@@ -59,8 +55,12 @@ function App() {
         <div className={badgeRecipe({ status: 'info', kind: 'solid' })}>
           Badge
         </div>
-        <div className={badgeRecipe({ status: 'success' })}>Badge</div>
-        <div className={badgeRecipe({ status: 'error' })}>Badge</div>
+        <div className={badgeRecipe({ status: 'success', kind: 'outline' })}>
+          Badge
+        </div>
+        <div className={badgeRecipe({ status: 'error', kind: 'outline' })}>
+          Badge
+        </div>
       </div>
     </div>
   );
