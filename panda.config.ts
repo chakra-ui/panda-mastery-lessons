@@ -12,7 +12,52 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      tokens: {
+        colors: {
+          cobalt: {
+            50: {
+              value: '#EBEDF9',
+            },
+            100: {
+              value: '#D3D7EE',
+            },
+            200: {
+              value: '#959CDE',
+            },
+            300: {
+              value: '#5460C8',
+            },
+            400: {
+              value: '#1020B9',
+            },
+            500: {
+              value: '#0C1893',
+            },
+            600: {
+              value: '#09136B',
+            },
+          },
+        },
+        radii: {
+          100: {
+            value: '2px',
+          },
+          200: {
+            value: '4px',
+          },
+          300: {
+            value: '8px',
+          },
+          400: {
+            value: '16px',
+          },
+          500: {
+            value: '24px',
+          },
+        },
+      },
+    },
   },
 
   // The output directory for your css system

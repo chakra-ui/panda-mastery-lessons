@@ -13,7 +13,7 @@ function App() {
       <div
         className={stack({
           bg: 'gray.100',
-          borderRadius: '500',
+          borderRadius: '24px',
           p: '8',
           gap: '8',
           maxW: '528px',
@@ -26,7 +26,7 @@ function App() {
           className={css({
             maxW: '462px',
             objectFit: 'cover',
-            borderRadius: '400',
+            borderRadius: '16px',
           })}
         />
         <h2
@@ -46,8 +46,8 @@ function App() {
         </p>
         <button
           className={css({
-            bg: 'cobalt.400',
-            borderRadius: '300',
+            bg: '#1020B9',
+            borderRadius: '8px',
             color: 'white',
             fontWeight: 'medium',
             px: '18px',
