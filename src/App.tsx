@@ -1,118 +1,71 @@
+import { Tabs } from '@ark-ui/react';
 import { sva } from '../styled-system/css';
-import { stack, hstack } from '../styled-system/patterns';
+import { stack } from '../styled-system/patterns';
 
-const alertRecipe = sva({
-  slots: ['root', 'icon', 'title', 'description'],
+const tabsRecipe = sva({
+  slots: ['root', 'tab', 'list', 'content'],
   base: {
     root: {
+      fontSize: '16px',
+    },
+    tab: {
       px: '16px',
-      py: '12px',
+      py: '10px',
     },
-    icon: {
-      width: '24px',
-      height: '24px',
+    list: {
+      display: 'flex',
     },
-    title: {
-      fontWeight: 'bold',
-      fontSize: '16px',
-    },
-    description: {
-      fontSize: '16px',
+    content: {
+      py: '24px',
     },
   },
   variants: {
-    status: {
-      info: {
-        root: {
-          colorPalette: 'blue',
-        },
-      },
-      error: {
-        root: {
-          colorPalette: 'red',
-        },
-      },
-      warning: {
-        root: {
-          colorPalette: 'orange',
-        },
-      },
-      success: {
-        root: {
-          colorPalette: 'green',
-        },
-      },
-    },
     kind: {
-      subtle: {
-        root: {
-          bg: 'colorPalette.100',
+      line: {
+        tab: {
+          _selected: {
+            borderBottomWidth: '2px',
+            borderColor: 'black',
+          },
         },
-        icon: {
-          color: 'colorPalette.600',
+        list: {
+          boxShadow: '0 -1px 0 0 #E0E0E0 inset',
+        },
+        content: {
+          px: '10px',
         },
       },
-      solid: {
-        root: {
-          bg: 'colorPalette.600',
-          color: 'white',
+      subtle: {
+        tab: {
+          _selected: {
+            bg: '#F0F0F2',
+            borderRadius: '6px',
+          },
+        },
+      },
+      enclosed: {
+        tab: {
+          _selected: {
+            bg: 'white',
+            borderRadius: '6px',
+            boxShadow: '0px 1px 4px 0px rgba(0, 0, 0, 0.25)',
+          },
+        },
+        list: {
+          bg: '#F0F0F2',
+          borderRadius: '8px',
+          p: '4px',
         },
       },
     },
   },
   defaultVariants: {
-    status: 'info',
-    kind: 'subtle',
+    kind: 'line',
   },
 });
 
-function InfoIcon(props: React.ComponentProps<'svg'>) {
-  return (
-    <svg
-      width='24'
-      height='24'
-      viewBox='0 0 24 24'
-      fill='currentColor'
-      xmlns='http://www.w3.org/2000/svg'
-      {...props}
-    >
-      <path d='M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM11 11V17H13V11H11ZM11 7V9H13V7H11Z' />
-    </svg>
-  );
-}
-
-function WarningIcon(props: React.ComponentProps<'svg'>) {
-  return (
-    <svg
-      width='24'
-      height='24'
-      viewBox='0 0 24 24'
-      fill='currentColor'
-      {...props}
-    >
-      <path d='M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM11 15V17H13V15H11ZM11 7V13H13V7H11Z' />
-    </svg>
-  );
-}
-
-function SuccessIcon(props: React.ComponentProps<'svg'>) {
-  return (
-    <svg
-      width='24'
-      height='24'
-      viewBox='0 0 24 24'
-      fill='currentColor'
-      {...props}
-    >
-      <path d='M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM11.003 16L18.073 8.929L16.659 7.515L11.003 13.172L8.174 10.343L6.76 11.757L11.003 16Z' />
-    </svg>
-  );
-}
-
 function App() {
-  const info = alertRecipe();
-  const warning = alertRecipe({ status: 'warning' });
-  const success = alertRecipe({ status: 'success' });
+  const classes = tabsRecipe();
 
   return (
     <div
@@ -122,35 +75,38 @@ function App() {
         px: '24px',
       })}
     >
-      <div className={info.root}>
-        <div className={hstack({ gap: '12px' })}>
-          <InfoIcon className={info.icon} />
-          <div className={stack({ gap: '0' })}>
-            <div className={info.title}>Title</div>
-            <div className={info.description}>This is a description</div>
-          </div>
-        </div>
-      </div>
-
-      <div className={warning.root}>
-        <div className={hstack({ gap: '12px' })}>
-          <WarningIcon className={warning.icon} />
-          <div className={stack({ gap: '0' })}>
-            <div className={warning.title}>Title</div>
-            <div className={warning.description}>This is a description</div>
-          </div>
-        </div>
-      </div>
-
-      <div className={success.root}>
-        <div className={hstack({ gap: '12px' })}>
-          <SuccessIcon className={success.icon} />
-          <div className={stack({ gap: '0' })}>
-            <div className={success.title}>Title</div>
-            <div className={success.description}>This is a description</div>
-          </div>
-        </div>
-      </div>
+      <Tabs.Root defaultValue='general' className={classes.root}>
+        <Tabs.List className={classes.list}>
+          <Tabs.Trigger className={classes.tab} value='general'>
+            General
+          </Tabs.Trigger>
+          <Tabs.Trigger className={classes.tab} value='team'>
+            Team
+          </Tabs.Trigger>
+          <Tabs.Trigger className={classes.tab} value='plan'>
+            Plan
+          </Tabs.Trigger>
+          <Tabs.Trigger className={classes.tab} value='billing'>
+            Billing
+          </Tabs.Trigger>
+        </Tabs.List>
+        <Tabs.Content className={classes.content} value='general'>
+          This tab provides a general overview and introduction to your SaaS
+          platform
+        </Tabs.Content>
+        <Tabs.Content className={classes.content} value='team'>
+          This tab provides a team overview and introduction to your SaaS
+          platform
+        </Tabs.Content>
+        <Tabs.Content className={classes.content} value='plan'>
+          This tab provides a plan overview and introduction to your SaaS
+          platform
+        </Tabs.Content>
+        <Tabs.Content className={classes.content} value='billing'>
+          This tab provides a billing overview and introduction to your SaaS
+          platform
+        </Tabs.Content>
+      </Tabs.Root>
     </div>
   );
 }

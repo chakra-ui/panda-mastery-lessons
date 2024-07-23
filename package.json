@@ -11,6 +11,7 @@
     "prepare": "panda codegen --clean"
   },
   "dependencies": {
+    "@ark-ui/react": "^3.5.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
