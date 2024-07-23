@@ -1,5 +1,6 @@
 import { css } from '../styled-system/css';
 import { center, stack } from '../styled-system/patterns';
+import { ColorModeToggle } from './color-mode-toggle';
 
 function App() {
   return (
@@ -11,8 +12,17 @@ function App() {
       })}
     >
       <div
+        className={css({
+          position: 'absolute',
+          top: '2',
+          right: '8',
+        })}
+      >
+        <ColorModeToggle />
+      </div>
+      <div
         className={stack({
-          bg: 'gray.100',
+          bg: 'bg.secondary',
           borderRadius: '500',
           p: '8',
           gap: '8',
@@ -31,22 +41,22 @@ function App() {
         />
         <h2
           className={css({
-            color: 'gray.900',
             fontWeight: 'semibold',
+            color: 'text',
           })}
         >
           Heading
         </h2>
         <p
           className={css({
-            color: 'gray.700',
+            color: 'text.secondary',
           })}
         >
           This is a short description of the card’s content
         </p>
         <button
           className={css({
-            bg: 'cobalt.400',
+            bg: 'bg.accent',
             borderRadius: '300',
             color: 'white',
             fontWeight: 'medium',

@@ -57,6 +57,62 @@ export default defineConfig({
           },
         },
       },
+      semanticTokens: {
+        colors: {
+          bg: {
+            DEFAULT: {
+              value: {
+                base: 'white',
+                _dark: '{colors.gray.900}',
+              },
+            },
+            secondary: {
+              value: {
+                base: '{colors.gray.100}',
+                _dark: '{colors.gray.800}',
+              },
+            },
+            tertiary: {
+              value: {
+                base: '{colors.gray.200}',
+                _dark: '{colors.gray.700}',
+              },
+            },
+            accent: {
+              value: {
+                base: '{colors.cobalt.400}',
+                _dark: '{colors.cobalt.300}',
+              },
+            },
+          },
+          text: {
+            DEFAULT: {
+              value: {
+                base: '{colors.gray.900}',
+                _dark: '{colors.gray.100}',
+              },
+            },
+            secondary: {
+              value: {
+                base: '{colors.gray.700}',
+                _dark: '{colors.gray.300}',
+              },
+            },
+            tertiary: {
+              value: {
+                base: '{colors.gray.500}',
+                _dark: '{colors.gray.400}',
+              },
+            },
+            accent: {
+              value: {
+                base: '{colors.cobalt.300}',
+                _dark: '{colors.cobalt.200}',
+              },
+            },
+          },
+        },
+      },
     },
   },
 
