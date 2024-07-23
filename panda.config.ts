@@ -12,7 +12,17 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      tokens: {
+        spacing: {
+          sm: { value: '8px' },
+          twoXS: { value: '4px' },
+        },
+        colors: {
+          borderBold: { value: 'black' },
+        },
+      },
+    },
   },
 
   // The output directory for your css system
