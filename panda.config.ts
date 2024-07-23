@@ -67,6 +67,47 @@ export default defineConfig({
           },
         },
       },
+      layerStyles: {
+        surface: {
+          outline: {
+            value: {
+              borderColor: 'gray.200',
+              borderWidth: '3px',
+            },
+          },
+          raised: {
+            value: {
+              boxShadow: '0px 12px 25px 0px rgba(0, 0, 0, 0.17)',
+              border: '1px solid',
+              borderColor: 'neutral.100',
+            },
+          },
+          subtle: {
+            value: {
+              background: 'neutral.100',
+            },
+          },
+        },
+        control: {
+          selected: {
+            value: {
+              background: 'blue.100',
+              borderWidth: '4px',
+              borderColor: 'blue.500',
+            },
+          },
+          disabled: {
+            value: {
+              background: 'gray.300',
+            },
+          },
+          solid: {
+            value: {
+              background: 'blue.600',
+            },
+          },
+        },
+      },
     },
   },
 

@@ -1,5 +1,5 @@
 import { css } from '../styled-system/css';
-import { center, stack } from '../styled-system/patterns';
+import { center, hstack, stack, vstack } from '../styled-system/patterns';
 
 function App() {
   return (
@@ -11,71 +11,103 @@ function App() {
       })}
     >
       <div
-        className={stack({
-          borderRadius: '3xl',
-          borderColor: 'gray.400',
-          border: '1px solid',
-          px: '10',
-          py: '14',
-          gap: '10',
+        className={vstack({
+          gap: '8',
         })}
       >
+        <button
+          className={css({
+            px: '7',
+            py: '4',
+            fontWeight: 'semibold',
+            borderRadius: 'xl',
+            textStyle: 'body.large',
+          })}
+        >
+          Button
+        </button>
         <div
           className={stack({
-            gap: '4',
+            p: '10',
+            borderRadius: '2xl',
+            gap: '6',
+            width: '420px',
           })}
         >
-          <div className={css({})}>What’s happening</div>
           <div
             className={css({
-              color: 'gray.500',
+              textStyle: 'body.large',
+              fontWeight: 'medium',
             })}
           >
-            Catch up on the latest news about Panda CSS
+            Select from available days
+          </div>
+          <div
+            className={hstack({
+              gap: '6',
+            })}
+          >
+            <div
+              className={css({
+                px: '8',
+                py: '6',
+                borderRadius: '2xl',
+                textStyle: 'body.large',
+                flex: '1',
+                textAlign: 'center',
+                fontWeight: 'medium',
+              })}
+            >
+              Mon
+            </div>
+            <div
+              className={css({
+                px: '8',
+                py: '6',
+                borderRadius: '2xl',
+                color: 'gray.400',
+                flex: '1',
+                textAlign: 'center',
+                textStyle: 'body.large',
+                fontWeight: 'medium',
+              })}
+            >
+              Tue
+            </div>
+          </div>
+          <div
+            className={hstack({
+              gap: '6',
+            })}
+          >
+            <div
+              className={css({
+                px: '8',
+                py: '6',
+                borderRadius: '2xl',
+                textStyle: 'body.large',
+                flex: '1',
+                textAlign: 'center',
+                fontWeight: 'medium',
+              })}
+            >
+              Wed
+            </div>
+            <div
+              className={css({
+                px: '8',
+                py: '6',
+                borderRadius: '2xl',
+                flex: '1',
+                textAlign: 'center',
+                textStyle: 'body.large',
+                fontWeight: 'medium',
+              })}
+            >
+              Thur
+            </div>
           </div>
         </div>
-        <div className={stack()}>
-          <div
-            className={css({
-              color: 'gray.500',
-            })}
-          >
-            Open Source - Trending
-          </div>
-          <div className={css({})}>Park UI has been upgraded</div>
-          <div
-            className={css({
-              color: 'gray.500',
-            })}
-          >
-            12.3k views
-          </div>
-        </div>
-        <div className={stack()}>
-          <div
-            className={css({
-              color: 'gray.500',
-            })}
-          >
-            Funding - Trending
-          </div>
-          <div className={css({})}>Chakra just raised 1.3M</div>
-          <div
-            className={css({
-              color: 'gray.500',
-            })}
-          >
-            452.3k views
-          </div>
-        </div>
-        <a
-          href='#'
-          className={css({
-            color: 'blue.500',
-          })}
-        >
-          Show more
-        </a>
       </div>
     </div>
   );
