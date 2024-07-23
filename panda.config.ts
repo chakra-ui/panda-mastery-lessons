@@ -1,5 +1,4 @@
 import { defineConfig } from '@pandacss/dev';
-import { alertRecipe } from './src/alert.recipe';
 
 export default defineConfig({
   // Whether to use css reset
@@ -13,11 +12,7 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {
-      recipes: {
-        alert: alertRecipe,
-      },
-    },
+    extend: {},
   },
 
   // The output directory for your css system

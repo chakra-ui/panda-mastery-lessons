@@ -1,38 +1,93 @@
-import { hstack, stack } from '../styled-system/patterns';
-import { alert } from '../styled-system/recipes';
-
-function InfoIcon(props: React.ComponentProps<'svg'>) {
-  return (
-    <svg
-      width='24'
-      height='24'
-      viewBox='0 0 24 24'
-      fill='currentColor'
-      xmlns='http://www.w3.org/2000/svg'
-      {...props}
-    >
-      <path d='M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM11 11V17H13V11H11ZM11 7V9H13V7H11Z' />
-    </svg>
-  );
-}
+import { css } from '../styled-system/css';
+import { vstack, hstack, circle } from '../styled-system/patterns';
 
 function App() {
-  const warning = alert({ status: 'warning', kind: 'subtle' });
-
   return (
     <div
-      className={stack({
+      className={css({
         minH: '100dvh',
-        pt: '96px',
-        px: '24px',
+        bg: 'black',
+        pt: '180px',
+        px: '6',
+        color: 'white',
       })}
     >
-      <div className={warning.root}>
-        <div className={hstack({ gap: '12px' })}>
-          <InfoIcon className={warning.icon} />
-          <div className={stack({ gap: '0' })}>
-            <div className={warning.title}>Title</div>
-            <div className={warning.description}>This is a description</div>
+      <div
+        className={vstack({
+          maxW: '640px',
+          mx: 'auto',
+          gap: '14',
+        })}
+      >
+        <div className={vstack({ gap: '6' })}>
+          <h1
+            className={css({
+              fontSize: '6xl',
+              fontWeight: '500px',
+              lineHeight: '1.1',
+              letterSpacing: '-1.2px',
+              textAlign: 'center',
+            })}
+          >
+            Own your audience.
+            <br />
+            <span className={css({ color: 'rose.500' })}>
+              So you don't lose them.
+            </span>
+          </h1>
+          <div
+            className={css({
+              maxW: '420px',
+              mx: 'auto',
+              textAlign: 'center',
+            })}
+          >
+            <p className={css({ fontSize: '2xl' })}>
+              Turn your audience into email and text message subscribers
+            </p>
+          </div>
+        </div>
+        <div className={vstack({ gap: '8' })}>
+          <div
+            className={hstack({
+              gap: '6',
+              fontSize: 'lg',
+              fontWeight: 'medium',
+            })}
+          >
+            <a
+              href='#'
+              className={css({
+                bg: 'white',
+                color: 'black',
+                px: '10',
+                py: '4',
+                borderRadius: 'lg',
+              })}
+            >
+              Get started Now
+            </a>
+            <a
+              href='#'
+              className={css({
+                bg: '#1D1D1D',
+                color: 'white',
+                px: '10',
+                py: '4',
+                borderRadius: 'lg',
+              })}
+            >
+              View a demo
+            </a>
+          </div>
+          <div className={hstack({ gap: '3' })}>
+            <div className={circle({ size: '3', bg: '#19BF57' })} />
+            <span className={css({ color: 'white' })}>
+              1000+{' '}
+              <span className={css({ color: '#A0AEC0' })}>
+                creators have already started
+              </span>
+            </span>
           </div>
         </div>
       </div>
