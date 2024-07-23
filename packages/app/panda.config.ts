@@ -15,6 +15,5 @@ export default defineConfig({
     extend: {},
   },
 
-  // The output directory for your css system
-  outdir: "styled-system",
+  importMap: "@mono/styled-system"
 });
