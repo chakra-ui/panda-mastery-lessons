@@ -14,7 +14,46 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      semanticTokens: {
+        fonts: {
+          cardTitle: { value: 'Inter' },
+        },
+        colors: {
+          cardBg: { value: 'white' },
+          cardAccent: { value: 'black' },
+        },
+      },
+    },
+  },
+
+  themes: {
+    kent: {
+      semanticTokens: {
+        fonts: {
+          cardTitle: { value: 'Domine' },
+        },
+        colors: {
+          cardBgr: { value: 'white' },
+          cardAccent: { value: '{colors.red.500}' },
+        },
+      },
+    },
+    oxford: {
+      semanticTokens: {
+        fonts: {
+          cardTitle: { value: 'Paytone One' },
+        },
+        colors: {
+          cardBg: { value: '{colors.green.50}' },
+          cardAccent: { value: '{colors.green.600}' },
+        },
+      },
+    },
+  },
+
+  staticCss: {
+    themes: ['*'],
   },
 
   // The output directory for your css system
