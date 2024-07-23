@@ -108,6 +108,12 @@ importers:
 
   packages/www:
     dependencies:
+      '@mono/preset':
+        specifier: workspace:*
+        version: link:../preset
+      '@mono/ui':
+        specifier: workspace:*
+        version: link:../ui
       next:
         specifier: 14.2.5
         version: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

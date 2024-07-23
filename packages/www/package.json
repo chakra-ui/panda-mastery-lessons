@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "panda codegen --clean",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -11,7 +12,9 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "next": "14.2.5",
+    "@mono/preset": "workspace:*",
+    "@mono/ui": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5",
