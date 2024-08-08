@@ -1,49 +1,78 @@
 import { css } from '../styled-system/css';
 
-export function MyButton() {
-  return (
-    <button
-      type='submit'
-      className={css({
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '10px',
-        bg: 'black',
-        color: 'white',
-        fontWeight: '600',
-        minHeight: '48px',
-        borderRadius: '4px',
-        px: '24px',
-        py: '12px',
-        _icon: { color: '#CDCDCD' },
-        _hover: {
-          bg: '#313131',
-        },
-        _focus: {
-          outline: '2px solid #ACACAC',
-          outlineOffset: '2px',
-        },
-      })}
-    >
-      <svg
-        width='12'
-        height='12'
-        viewBox='0 0 12 12'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <path
-          d='M4.2212 8.76001C4.27697 8.78681 4.33813 8.80049 4.4 8.80001C4.48655 8.80001 4.57076 8.77194 4.64 8.72001L7.84 6.32001C7.88968 6.28275 7.93 6.23444 7.95777 6.1789C7.98554 6.12336 8 6.06211 8 6.00001C8 5.93791 7.98554 5.87667 7.95777 5.82113C7.93 5.76558 7.88968 5.71727 7.84 5.68001L4.64 3.28001C4.58057 3.23544 4.50991 3.2083 4.43592 3.20163C4.36194 3.19496 4.28756 3.20902 4.22111 3.24224C4.15467 3.27546 4.09879 3.32653 4.05974 3.38972C4.02069 3.45291 4 3.52573 4 3.60001V5.60001H0.4C0.293913 5.60001 0.192172 5.64216 0.117157 5.71717C0.0421427 5.79218 0 5.89393 0 6.00001C0 6.1061 0.0421427 6.20784 0.117157 6.28286C0.192172 6.35787 0.293913 6.40001 0.4 6.40001H4V8.40001C3.99959 8.47468 4.02009 8.54798 4.05919 8.6116C4.09828 8.67522 4.1544 8.72663 4.2212 8.76001Z'
-          fill='currentColor'
-        />
-        <path
-          d='M10.4 0H1.6C1.17565 0 0.768687 0.168571 0.468629 0.468629C0.168571 0.768687 0 1.17565 0 1.6V3.2C0 3.30609 0.0421427 3.40783 0.117157 3.48284C0.192172 3.55786 0.293913 3.6 0.4 3.6C0.506087 3.6 0.607828 3.55786 0.682843 3.48284C0.757857 3.40783 0.8 3.30609 0.8 3.2V1.6C0.8 1.38783 0.884285 1.18434 1.03431 1.03431C1.18434 0.884285 1.38783 0.8 1.6 0.8H10.4C10.6122 0.8 10.8157 0.884285 10.9657 1.03431C11.1157 1.18434 11.2 1.38783 11.2 1.6V10.4C11.2 10.6122 11.1157 10.8157 10.9657 10.9657C10.8157 11.1157 10.6122 11.2 10.4 11.2H1.6C1.38783 11.2 1.18434 11.1157 1.03431 10.9657C0.884285 10.8157 0.8 10.6122 0.8 10.4V8.8C0.8 8.69391 0.757857 8.59217 0.682843 8.51716C0.607828 8.44214 0.506087 8.4 0.4 8.4C0.293913 8.4 0.192172 8.44214 0.117157 8.51716C0.0421427 8.59217 0 8.69391 0 8.8V10.4C0 10.8243 0.168571 11.2313 0.468629 11.5314C0.768687 11.8314 1.17565 12 1.6 12H10.4C10.8243 12 11.2313 11.8314 11.5314 11.5314C11.8314 11.2313 12 10.8243 12 10.4V1.6C12 1.17565 11.8314 0.768687 11.5314 0.468629C11.2313 0.168571 10.8243 0 10.4 0Z'
-          fill='currentColor'
-        />
-      </svg>
-      Sign In
-    </button>
-  );
+// Here's the data required for the component
+const data = {
+  name: 'Judith Samuels',
+  role: 'Frontend Developer',
+  bio: 'Creative developer with a passion for crafting responsive web applications',
+  price: 40,
+  status: 'Top Rated',
+  rating: 4.2,
+  image:
+    'https://images.unsplash.com/photo-1611432579699-484f7990b127?q=80&w=400&auto=format&fit=crop',
+};
+
+// Icons you need for the component
+export const RatingIcon = () => (
+  <svg
+    width='16'
+    height='16'
+    viewBox='0 0 16 16'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M8.00004 1.33334L10.06 5.50668L14.6667 6.18001L11.3334 9.42668L12.12 14.0133L8.00004 11.8467L3.88004 14.0133L4.66671 9.42668L1.33337 6.18001L5.94004 5.50668L8.00004 1.33334Z'
+      stroke='#262626'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);
+
+export const MessageIcon = () => (
+  <svg
+    width='14'
+    height='14'
+    viewBox='0 0 14 14'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M13 9C13 9.35362 12.8595 9.69276 12.6095 9.94281C12.3594 10.1929 12.0203 10.3333 11.6667 10.3333H3.66667L1 13V2.33333C1 1.97971 1.14048 1.64057 1.39052 1.39052C1.64057 1.14048 1.97971 1 2.33333 1H11.6667C12.0203 1 12.3594 1.14048 12.6095 1.39052C12.8595 1.64057 13 1.97971 13 2.33333V9Z'
+      stroke='#282828'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);
+
+export const HeartIcon = () => (
+  <svg
+    width='14'
+    height='14'
+    viewBox='0 0 14 14'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M11.0833 8.16667C11.9525 7.315 12.8333 6.29417 12.8333 4.95833C12.8333 4.10743 12.4953 3.29138 11.8936 2.6897C11.2919 2.08802 10.4759 1.75 9.62496 1.75C8.59829 1.75 7.87496 2.04167 6.99996 2.91667C6.12496 2.04167 5.40163 1.75 4.37496 1.75C3.52406 1.75 2.708 2.08802 2.10633 2.6897C1.50465 3.29138 1.16663 4.10743 1.16663 4.95833C1.16663 6.3 2.04163 7.32083 2.91663 8.16667L6.99996 12.25L11.0833 8.16667Z'
+      stroke='black'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);
+
+// Define the props for the component
+interface ProfileCardProps {}
+
+// Implement the profile card component
+export function ProfileCard(props: ProfileCardProps) {
+  return <div />;
 }
 
 function App() {
@@ -54,7 +83,7 @@ function App() {
         padding: '48px',
       })}
     >
-      <MyButton />
+      <ProfileCard />
     </div>
   );
 }
