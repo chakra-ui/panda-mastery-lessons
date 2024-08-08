@@ -80,7 +80,6 @@ function App() {
     <div
       className={css({
         minHeight: '100dvh',
-        padding: '48px',
       })}
     >
       <ProfileCard />
