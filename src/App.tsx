@@ -68,11 +68,128 @@ export const HeartIcon = () => (
 );
 
 // Define the props for the component
-interface ProfileCardProps {}
+interface ProfileCardProps {
+  image: string;
+  name: string;
+  title: string;
+  rating: number;
+  bio: string;
+  price: number;
+  status: string;
+}
 
 // Implement the profile card component
 export function ProfileCard(props: ProfileCardProps) {
-  return <div />;
+  const { image, name, title, rating, bio, price, status } = props;
+
+  return (
+    <div
+      className={css({
+        borderRadius: '8px',
+        bg: 'white',
+        color: '#262626',
+        p: '24px',
+        display: 'flex',
+        flexDir: 'column',
+        gap: '16px',
+      })}
+    >
+      <div
+        className={css({
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        })}
+      >
+        <div
+          className={css({
+            display: 'flex',
+            alignItems: 'center',
+            gap: '16px',
+          })}
+        >
+          <img
+            src={image}
+            alt={name}
+            className={css({
+              height: '40px',
+              width: '40px',
+              borderRadius: 'full',
+              objectFit: 'cover',
+            })}
+          />
+          <div>
+            <div className={css({ fontWeight: 'semibold' })}>{name}</div>
+            <div className={css({ fontWeight: 'medium', fontSize: '14px' })}>
+              {title}
+            </div>
+          </div>
+        </div>
+        <div
+          className={css({
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px',
+          })}
+        >
+          <div className={css({ fontWeight: 'semibold' })}>{rating}</div>
+          <RatingIcon />
+        </div>
+      </div>
+
+      <div className={css({ color: '#525252' })}>{bio}</div>
+
+      <div
+        className={css({
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        })}
+      >
+        <div
+          className={css({
+            fontWeight: 'semibold',
+            fontSize: '14px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '24px',
+          })}
+        >
+          <div>${price}/hr</div>
+          <div>{status}</div>
+        </div>
+
+        <div
+          className={css({
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+          })}
+        >
+          <button
+            className={css({
+              borderColor: '#EDEDED',
+              borderWidth: '1px',
+              borderRadius: '4px',
+              p: '10px',
+            })}
+          >
+            <MessageIcon />
+          </button>
+          <button
+            className={css({
+              borderColor: '#EDEDED',
+              borderWidth: '1px',
+              borderRadius: '4px',
+              p: '10px',
+            })}
+          >
+            <HeartIcon />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function App() {
@@ -80,10 +197,27 @@ function App() {
     <div
       className={css({
         minHeight: '100dvh',
-        padding: '48px',
+        bg: '#F5F5F5',
+        paddingTop: '240px',
       })}
     >
-      <ProfileCard />
+      <div
+        className={css({
+          maxW: '370px',
+          margin: '0 auto',
+        })}
+      >
+        <ProfileCard
+          image='https://images.unsplash.com/photo-1611432579699-484f7990b127?q=80&w=400&auto=format&fit=crop'
+          name='Judith Samuels'
+          title='Frontend Developer'
+          rating={4.2}
+          bio='Creative developer with a passion for crafting responsive web
+            applications'
+          price={40}
+          status='Top Rated'
+        />
+      </div>
     </div>
   );
 }
