@@ -4,16 +4,14 @@ import { ProfileCard } from './ProfileCard';
 import { ColorModeToggle } from './color-mode-toggle';
 import { profileData } from './profile-data';
 
-// Use Semantic tokens
-
 function App() {
   return (
     <div
       className={css({
         minHeight: '100dvh',
-        bg: { base: '#F5F5F5', _dark: '#0A0A0A' },
+        bg: 'bg.default',
         pt: '120px',
-        color: { base: '#262626', _dark: '#FFFFFF' },
+        color: 'fg.default',
       })}
     >
       <div
@@ -54,7 +52,7 @@ function App() {
           </div>
           <div
             className={css({
-              color: { base: '#525252', _dark: '#E5E5E5' },
+              color: 'fg.subtle',
               fontSize: { base: '16px', lg: '20px' },
               pt: '16px',
             })}

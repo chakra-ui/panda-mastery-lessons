@@ -10,17 +10,50 @@ export default defineConfig({
   // Files to exclude
   exclude: [],
 
-  // Global CSS here
-  globalCss: {
-    body: {
-      bg: { base: '#F8FAFC', _dark: 'black' },
-      color: { base: 'black', _dark: 'white' },
-    },
-  },
-
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      semanticTokens: {
+        colors: {
+          bg: {
+            default: {
+              value: {
+                base: '{colors.neutral.100}',
+                _dark: '{colors.neutral.950}',
+              },
+            },
+            card: {
+              value: {
+                base: '{colors.white}',
+                _dark: '{colors.neutral.800}',
+              },
+            },
+          },
+          fg: {
+            default: {
+              value: {
+                base: '{colors.neutral.800}',
+                _dark: '{colors.white}',
+              },
+            },
+            subtle: {
+              value: {
+                base: '{colors.neutral.600}',
+                _dark: '{colors.neutral.200}',
+              },
+            },
+          },
+          border: {
+            default: {
+              value: {
+                base: '{colors.neutral.200}',
+                _dark: '{colors.neutral.700}',
+              },
+            },
+          },
+        },
+      },
+    },
   },
 
   // The output directory for your css system

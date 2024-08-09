@@ -17,8 +17,8 @@ export function ProfileCard(props: ProfileCardProps) {
     <div
       className={stack({
         borderRadius: '8px',
-        bg: { base: 'white', _dark: '#272727' },
-        color: { base: '#262626', _dark: '#FFFFFF' },
+        bg: 'bg.card',
+        color: 'fg.default',
         p: '24px',
         gap: '16px',
       })}
@@ -85,7 +85,7 @@ export function ProfileCard(props: ProfileCardProps) {
         <div className={hstack({ gap: '12px' })}>
           <button
             className={css({
-              borderColor: { base: '#EDEDED', _dark: '#424242' },
+              borderColor: 'border.default',
               borderWidth: '1px',
               borderRadius: '4px',
               p: '10px',
@@ -109,7 +109,7 @@ export function ProfileCard(props: ProfileCardProps) {
           </button>
           <button
             className={css({
-              borderColor: { base: '#EDEDED', _dark: '#424242' },
+              borderColor: 'border.default',
               borderWidth: '1px',
               borderRadius: '4px',
               p: '10px',
