@@ -119,6 +119,8 @@ const WindIcon = () => (
   </svg>
 );
 
+// Create card recipe here
+
 // Card structure
 function App() {
   return (
