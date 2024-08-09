@@ -1,19 +1,28 @@
 import { css } from '../styled-system/css';
 import { grid } from '../styled-system/patterns';
 import { ProfileCard } from './ProfileCard';
+import { ColorModeToggle } from './color-mode-toggle';
 import { profileData } from './profile-data';
 
-// Add dark mode styles and colormode toggle button to app
 function App() {
   return (
     <div
       className={css({
         minHeight: '100dvh',
-        bg: '#F5F5F5',
+        bg: { base: '#F5F5F5', _dark: '#0A0A0A' },
         pt: '120px',
-        color: '#262626',
+        color: { base: '#262626', _dark: '#FFFFFF' },
       })}
     >
+      <div
+        className={css({
+          position: 'absolute',
+          top: '8px',
+          right: '32px',
+        })}
+      >
+        <ColorModeToggle />
+      </div>
       <div
         className={css({
           maxW: { md: '768px', lg: '1244px' },
@@ -43,7 +52,7 @@ function App() {
           </div>
           <div
             className={css({
-              color: '#525252',
+              color: { base: '#525252', _dark: '#E5E5E5' },
               fontSize: { base: '16px', lg: '20px' },
               pt: '16px',
             })}
