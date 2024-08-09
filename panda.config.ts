@@ -1,5 +1,6 @@
 import { defineConfig } from '@pandacss/dev';
 import { cardRecipe } from './src/card.recipe';
+import { timelineRecipe } from './src/timeline.recipe';
 
 export default defineConfig({
   // Whether to use css reset
@@ -16,6 +17,7 @@ export default defineConfig({
     extend: {
       recipes: {
         card: cardRecipe,
+        timeline: timelineRecipe,
       },
     },
   },
