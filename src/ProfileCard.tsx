@@ -1,4 +1,5 @@
 import { css } from '../styled-system/css';
+import { circle, hstack, stack } from '../styled-system/patterns';
 
 interface ProfileCardProps {
   image: string;
@@ -14,13 +15,11 @@ export function ProfileCard(props: ProfileCardProps) {
   const { image, name, title, rating, bio, price, status } = props;
   return (
     <div
-      className={css({
+      className={stack({
         borderRadius: '8px',
         bg: 'white',
         color: '#262626',
         p: '24px',
-        display: 'flex',
-        flexDir: 'column',
         gap: '16px',
       })}
     >
@@ -31,20 +30,12 @@ export function ProfileCard(props: ProfileCardProps) {
           justifyContent: 'space-between',
         })}
       >
-        <div
-          className={css({
-            display: 'flex',
-            alignItems: 'center',
-            gap: '16px',
-          })}
-        >
+        <div className={hstack({ gap: '16px' })}>
           <img
             src={image}
             alt={name}
-            className={css({
-              height: '40px',
-              width: '40px',
-              borderRadius: 'full',
+            className={circle({
+              size: '40px',
               objectFit: 'cover',
             })}
           />
@@ -55,13 +46,7 @@ export function ProfileCard(props: ProfileCardProps) {
             </div>
           </div>
         </div>
-        <div
-          className={css({
-            display: 'flex',
-            alignItems: 'center',
-            gap: '4px',
-          })}
-        >
+        <div className={hstack({ gap: '4px' })}>
           <div className={css({ fontWeight: 'semibold' })}>{rating}</div>
           <svg
             width='16'
@@ -83,19 +68,11 @@ export function ProfileCard(props: ProfileCardProps) {
 
       <div className={css({ color: '#525252' })}>{bio}</div>
 
-      <div
-        className={css({
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        })}
-      >
+      <div className={hstack({ justifyContent: 'space-between' })}>
         <div
-          className={css({
+          className={hstack({
             fontWeight: 'semibold',
             fontSize: '14px',
-            display: 'flex',
-            alignItems: 'center',
             gap: '24px',
           })}
         >
@@ -103,13 +80,7 @@ export function ProfileCard(props: ProfileCardProps) {
           <div>{status}</div>
         </div>
 
-        <div
-          className={css({
-            display: 'flex',
-            alignItems: 'center',
-            gap: '12px',
-          })}
-        >
+        <div className={hstack({ gap: '12px' })}>
           <button
             className={css({
               borderColor: '#EDEDED',
