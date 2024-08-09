@@ -118,6 +118,7 @@ const WindIcon = () => (
   </svg>
 );
 
+// Convert to a config recipe
 const cardRecipe = cva({
   base: {
     borderRadius: '12px',
