@@ -1,5 +1,6 @@
-import { css, cva } from '../styled-system/css';
+import { css } from '../styled-system/css';
 import { flex, hstack, stack } from '../styled-system/patterns';
+import { card } from '../styled-system/recipes';
 
 const SunIcon = () => (
   <svg
@@ -118,33 +119,6 @@ const WindIcon = () => (
   </svg>
 );
 
-// Convert to a config recipe
-const cardRecipe = cva({
-  base: {
-    borderRadius: '12px',
-    py: '24px',
-    px: '20px',
-  },
-  variants: {
-    kind: {
-      outline: {
-        borderWidth: '1px',
-        borderColor: '#DBDBDB',
-        bg: 'white',
-      },
-      elevated: {
-        borderWidth: '1px',
-        borderColor: '#F2F2F2',
-        boxShadow: '0px 3px 4px 0px rgba(0, 0, 0, 0.13);',
-        bg: 'white',
-      },
-      filled: {
-        bg: '#F1F1F1',
-      },
-    },
-  },
-});
-
 function App() {
   return (
     <div
@@ -155,7 +129,7 @@ function App() {
       })}
     >
       <div className={hstack({ gap: '32px', maxW: '400px', mx: 'auto' })}>
-        <div className={cardRecipe({ kind: 'elevated' })}>
+        <div className={card({ kind: 'elevated' })}>
           <div className={stack({ gap: '12px' })}>
             <div>
               <div className={css({ fontWeight: '600' })}>United Kingdom</div>
