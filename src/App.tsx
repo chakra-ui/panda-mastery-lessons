@@ -4,6 +4,8 @@ import { ProfileCard } from './ProfileCard';
 import { ColorModeToggle } from './color-mode-toggle';
 import { profileData } from './profile-data';
 
+// Use Semantic tokens
+
 function App() {
   return (
     <div
