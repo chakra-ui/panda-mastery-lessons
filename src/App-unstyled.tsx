@@ -58,8 +58,8 @@ function App() {
             </div>
             <div>
               <Feature
-                title='Orders and fulfilment'
-                description='Fufill orders quickly and accurately'
+                title='Orders and fulfillment'
+                description='Fulfill orders quickly and accurately'
                 icon={
                   <svg
                     width='32'
